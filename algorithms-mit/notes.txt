@@ -1,0 +1,65 @@
+==========================================
+Algorithms I & II - MIT
+Lecture Notes
+==========================================
+Week 1: Union-Find
+==========================================
+-Dynamic connectivitiy
+  - Given a set of N objects:
+    - Union command: connect two objects
+    - Find query: is there a path connecting two objects?
+  - Model simplifications:
+    - Use integers as an index
+    - Suppress all other details irrelevant to union-Find
+  - Connection assumptions:
+    - Reflexive: p is connected to p
+    - Symmetric: if p is connected to q, then q is connected to p
+    - Transitive: if p is connected to q and q is connected to r, then p is connected to r
+  - Connected components: Maximal set of objects that are mutually connected
+  - Implementation:
+    - Union command: check if two objects are in the same component
+    - Find query: merge components containg objects together
+  - Union-find data type:
+    - public class UF
+    - UF(int N)
+    - void union(int p, int q)
+    - boolean connected(int p, int q)
+- Quick Find (eager approach)
+  - Data structure
+    - Integer array id[] of size N
+    - Interpretation: p and q are connected iff they have the same id
+  - Functions
+    - Find: Check if p and q have the same id
+    - Union: to merge components containing p and q, change all entries whose id equals id[p] to id[q]
+  -Cost model -> too slow
+    - Initialise - N
+    - Union - N
+    - Find - 1
+- Quick Union (lazy approach)
+  - Same data structure as Quick Find
+    - Interpretation: id[i] is parent of i
+  - Functions:
+    - Find: Check if p and q have the same root
+    - Union: Set the id of p's root to the id of q's root
+  - Cost model -> too slow
+    - Initialise - N
+    - Union - N 
+    - Find - N (worst case)
+- Quick Union Improvements
+  - Cost model -> acceptable
+    - Initialise - N
+    - Union - lg N 
+    - Find - lg N
+==========================================
+Week 1: Analysis of Algorithms
+==========================================
+- 3-Sum Problem
+  - Given N distinct integers, how many triples (a, b, c) sum to exactly zero?
+  - Implementations:
+    - brute-force algorithm (n^3):
+      - 3 for loops, check each triple, if triple works increment count
+- Log/log chart of input vs. running time gives the exponent 
+==========================================
+Week 2: Elementary Sorts
+==========================================
+- 

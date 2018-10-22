@@ -1,0 +1,30 @@
+public class CompressedQuickUnionUF {
+  
+    private int[] id;
+  
+    public CompressedQuickUnionUF(int N) {
+      id = new int[N];
+      for(int i = 0; i < N; i++) {
+        id[i] = i;
+      }
+    }
+  
+    int root(int x){
+      while(id[x] != x) {
+        id[x] = id[id[x]];
+        x = id[x]
+      }
+      return x;
+    }
+
+    void union(int p, int q){
+      int i = root(p);
+      int j = root(q);
+      id[i] = j;
+    }
+  
+    boolean connected(int p, int q) {
+      return root(p) == root(q);
+    }
+
+}
