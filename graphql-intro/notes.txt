@@ -1,0 +1,29 @@
+Review of REST-ful routing
+- Uniform URL & HTTP request methods used to access a server's records
+  e.g. POST /<object> - Create a record
+  e.g. GET - /<object> - Fetch all records
+  e.g. GET - /<object>/:id - Fetch record with given id
+  e.g. PUT - /<object>/:id - Update record with given id
+  e.g. DELETE - /<object>/:id - Delete record with given id
+- Nested records e.g. /<object1>/:id1/<object2>/:id2
+  --> Queries get complicated
+  --> May involve lots of requests
+  --> May over-fetch record details
+
+  What is GraphQL?
+  - Maps relational database to graph 
+  - Queries look like:
+    query {
+      user(id: "23") {
+        friends {
+          company {
+            name
+          }
+        }
+      }
+    }
+
+Passport & GraphQL
+- GraphQL is the mediator of a lot of other services
+
+
