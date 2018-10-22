@@ -1,0 +1,35 @@
+Arguments: 
+  /home/mark/n/bin/node /home/mark/n/bin/yarn install
+
+PATH: 
+  /home/mark/bin:/home/mark/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/c/Program Files (x86)/Common Files/Oracle/Java/javapath_target_4427875:/c/Program Files/Docker/Docker/resources/bin:/c/Windows/System32:/c/Windows:/c/Windows/System32/wbem:/c/Windows/System32/WindowsPowerShell/v1.0:/c/Program Files/Git/cmd:/c/Windows/System32/OpenSSH:/c/Users/mark/AppData/Local/Programs/Python/Python36/Scripts:/c/Users/mark/AppData/Local/Programs/Python/Python36:/c/Users/mark/AppData/Local/Microsoft/WindowsApps:/c/Program Files/Microsoft VS Code/bin:/c/Users/mark/AppData/Local/Android/Sdk/platform-tools:/c/Users/mark/AppData/Local/Android/Sdk/tools:/home/mark/n/bin
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  9.8.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: connect ECONNREFUSED 104.18.94.96:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1170:14)
+
+npm manifest: 
+  {
+    "main": "node_modules/expo/AppEntry.js",
+    "private": true,
+    "dependencies": {
+      "expo": "^28.0.0",
+      "react": "16.3.1",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-28.0.0.tar.gz"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
