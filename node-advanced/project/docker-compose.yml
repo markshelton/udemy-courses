@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+
+  reverse-proxy:
+    image: traefik
+    command: --api --docker.exposedbydefault=false
+    ports: 
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  client:
+    build:
+      dockerfile: ./client/Dockerfile
+      context: ./client
+    volumes:
+      - ./client/src:/app/src
+    ports:
+      - 3000:3000
+    env_file: .env
+
+  server:
+    build:
+      dockerfile: ./server/Dockerfile
+      context: ./server
+    command: npm run dev
+    volumes:
+      - ./server/src:/app/src
+    ports:
+      - 5000:5000
+    env_file: .env
+    depends_on:
+      - database
+      - cache
+
+  cache:
+    image: redis:alpine
+
+  database:
+    image: mongo
+    restart: always

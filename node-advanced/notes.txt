@@ -1,0 +1,31 @@
+1. Javascript Code We Write
+2. Node - Javascript
+ - argument checking, error handling
+ - process.binding()  - imports C++ code
+3. Node - C++
+ - V8 - translation layer between Javascript and C++
+ - libuv - interface with OS, concurrency
+
+Process - instance of a running program
+Thread - pipeline of operations (process can have multiple)
+
+Handling multiple threads
+    1. Add more cores to the CPU
+    2. Inspect thread instructions and interleave
+
+Node Event Loop -> Single Threaded
+Some of Node Framework / Standard Library -> Not Single Threaded
+
+libuv manages thread pool
+    - 4 threads by default
+    - process.env.UV_THREADPOOL_SIZE
+
+Can we use the threadpool for personal JS Code? Yes!
+What functions in node stdlib use threadpool? fs + some crypto
+How does threadpool fit into event loop? Through pendingOperations
+
+Improving Node Performance
+    - Use Node in 'Cluster' Mode - Recommended
+    - Use Worker Threads - Experimental
+
+

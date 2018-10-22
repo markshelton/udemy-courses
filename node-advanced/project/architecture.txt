@@ -1,0 +1,6 @@
+User sends request to Proxy
+case of Request:
+    Page: send request to Client (DEV: webpack-dev-server, PROD: nginx)
+    API: send request to Server (DEV: babel-node, PROD: node)
+Server sends request to Cache
+Cache sends request to Database
