@@ -1,0 +1,44 @@
+--------------------------------
+Modern Javascript Tooling
+--------------------------------
+
+1. Project Files
+- component_1.js
+- component_2.js
+- component_3.js
+- React.js (View library)
+- Redux.js
+
+2. Tooling (Transpile JSX + ES6 --> ES5)
+- Webpack
+- Babel
+
+3. Compiled Files
+- index.html
+- application.js
+- style.css
+
+4. Webpage (run in Browser)
+
+--------------------------------
+
+Component / View: Javascript functions that produce html
+Nest components within each other
+JSX: Subset / dialect of Javascript that looks like html but is actually Javascript
+Function component (simple) vs. class component (record storing, has state)
+"function() {}" == "() => {}"
+Controlled Component: State --> Input --> State
+Always add a key to items in a list
+Redux: app-level state, collection of data that describes the app
+React: views that translate app data to screen
+Containers: the most parent container that cares about state (connected to Redux)
+React and Redux are separate libraries - connected through React-Redux (esp. connect func.)
+Redux: Input --> calls ActionCreator --> creates Action --> Action sent to Reducers --> Reducers change state
+Do not mutate state in reducer, return new objects
+If you pass a callback with 'this' which also includes 'this' then you need to bind it in the constructor
+state.concat([action.payload.data]) === [action.payload.data, ...state]
+Redux Thunk: Middleware that handles asynchronous actions (ActionCreator returns function with arg 'dispatch')
+React <-> Redux <-> Firebase --- Not ReactFire!
+Firebase Ref (in ActionCreator, using Redux Thunk) -> Action -> Reducers -> State
+Dev Pipeline: Our Code -> Webpack -> Webpack Dev Server -> localhost:8080
+Prod Pipeline: Our Code -> Push to Heroku -> NPM Install -> Run 'postinstall' -> Run server.js -> xyz.herokuapp.com
