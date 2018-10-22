@@ -1,0 +1,43 @@
+Browser Rendering (Traditional)
+  1. User navigates to page
+  2. Browser loads up React app
+  3. Browser fetches any required data
+  4. Browser renders the React app
+  - This can take a really long time
+
+Server Side Rendering (SSR)
+  1. User navigates to page
+  2. Server recieves request
+  3. Server loads up React app in memory
+  4. Server fetches any required data
+  5. Server renders the React app
+  6. Server send the generated HTML to the browser
+
+API Server -> Rendering Server -> User's Browser
+  -React SSR is slow! Splitting servers is important
+  - Business Logic & Data Layer (API Server)
+    - DB Access
+    - Authentication
+    - Logging
+    - Validation
+    - Authorization
+  - View Layer (Rendering Server)
+    - Take Data, Produce HTML
+
+Problem: JSX on the server
+Solution: Run webpack on all server-side code, then execute resulting bundle
+
+Problem: Need to turn components into HTML
+Solution: Use the 'react-dom/server' library 'renderToString' function
+
+Server Side Rendering <-> Universal Javascript <-> Isomorphic Javascript
+
+React-Router:
+- Server: StaticRouter
+- Client: BrowserRouter
+
+4 Big Redux Challenges
+1. Redux needs different config on browser vs. server (i.e. two stores)
+2. Aspects of auth needs to be handled on server (not just browser)
+3. Need to detect when all initial data load ACs are completed on server
+4. Need state rehydration on the browser
